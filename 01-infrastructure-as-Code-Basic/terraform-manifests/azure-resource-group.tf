@@ -10,9 +10,8 @@ terraform {
 
 #Configure the microsoft Azure Privider
 provider "azurerm" {
-  features {
-    
-  }
+  features {}
+  subscription_id = "58cd6367-25ba-42eb-88fb-eecbaf0f7ac6"
 }
 
 #Create Resource group 
