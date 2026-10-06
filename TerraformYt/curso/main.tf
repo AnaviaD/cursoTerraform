@@ -5,4 +5,15 @@ provider "aws" {
 resource "aws_instance" "nginx-server"{
     ami = "ami-0440d3b780d96b29d"
     instance_type = "t3.micro"
+
+    user_data = <<-EOF
+        #!/bin/bash
+
+        apt-get update -y
+        apt-get install -y nginx
+
+        systemctl enable nginx
+        systemctl start nginx
+        EOF
+
 }
